@@ -1,0 +1,29 @@
+<apex:page >
+    <style >
+      .center {
+          margin: auto;
+          width: 50%;
+          border: 3px solid blue;
+          padding: 10px;
+   	 }
+    
+    </style>
+    <apex:form styleClass="center">
+    <apex:sectionHeader title="Calculator"/>
+    <apex:pageBlock >
+       <apex:pageBlockSection columns="1">
+                <apex:inputText label="Enter first Number" />
+                <apex:inputText label="Enter second Number" />
+                <apex:outputText value="Result"/>
+       </apex:pageBlockSection>
+       
+        
+         <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!add}" value="Add" />
+                <apex:commandButton action="{!subtract}" value="Subtract" />
+                <apex:commandButton action="{!multiply}" value="Multiply" />
+                <apex:commandButton action="{!divide}" value="Divide"/>
+            </apex:pageBlockButtons>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,52 @@
+<apex:page >
+    <style>
+        .center {
+          margin: auto;
+          width: 50%;
+          border: solid blue;
+          padding: 20px;
+          font-size: 16px;
+   	 }
+        
+    </style>
+    
+    <apex:form styleClass="center">
+    
+            
+        <apex:sectionHeader title="Student Registration"/>
+
+    
+    <apex:pageBlock >
+      <apex:pageBlockSection columns="1">
+          
+          <apex:inputText label="Student Name:" />
+           <apex:inputText label="Email:" />
+           <apex:inputText label="Phone:" />
+       
+
+           <apex:selectList label="Courses:" size="1">
+           		<apex:selectOption itemLabel="English" itemValue="E"></apex:selectOption>
+               	<apex:selectOption itemLabel="Hindi" itemValue="H"></apex:selectOption>    
+           		<apex:selectOption itemLabel="Marathi" itemValue="M"></apex:selectOption>    
+           		<apex:selectOption itemLabel="Math" itemValue="Mt"></apex:selectOption>              
+          </apex:selectList>
+          
+          <apex:inputText label="Collage Name:"/>
+          <apex:outputText value="Student registered successfully!" style="color:green; font-weight:bold;"/>
+
+      </apex:pageBlockSection>
+        
+          
+
+          <apex:pageBlockButtons location="bottom">
+          		<apex:commandButton title="Submit" value="Submit"/>
+                <apex:commandButton title="Clear" value="Clear"/>
+          </apex:pageBlockButtons>
+        
+     
+        
+        
+    </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

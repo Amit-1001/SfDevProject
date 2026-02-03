@@ -1,0 +1,19 @@
+<template>
+
+    <lightning-button variant="brand" label="Show/Hide" title="Show/Hide" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    <div class="slds-grid slds-guttters">
+        <template if:true={isTrue}>      
+        <template for:each={userRecords} for:item="user">
+            <div key ={user} class="slds-col slds-size_1-of-4">
+                <lightning-card  variant="Narrow"  title={user} icon-name="standard:account">
+                <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+                <p class="slds-p-horizontal_small">Card Body Narrow (custom component)</p>
+                <p slot="footer">Card Footer</p>
+                </lightning-card>
+            </div>          
+        </template>
+                
+        </template>
+        
+    </div>
+</template>

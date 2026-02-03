@@ -1,0 +1,21 @@
+<template>
+    <lightning-card icon-name="standard:event" variant="base">
+        <br class="slds-m-around_medium">
+        <lightning-input type="text" label="Name"></lightning-input>
+        </br>
+        
+        <lightning-input type="datetime" name="Start Date" label="Start Date"></lightning-input>
+        </br>
+        <lightning-input type="datetime" name="End Date" label="End Date"></lightning-input>
+        </br>
+        <lightning-input type="number" name="Max Attendees" label="Max Attendees"
+            formatter="currency"></lightning-input>
+        </br>
+        <lightning-input-rich-text required type="number" variant="standard" value={eventRecord.Event_Detail__c}
+            name="Event_Detail__c" label="Event Details" onchange={handleChange}>
+        </lightning-input-rich-text>
+        </br>
+        </div>
+    </lightning-card>
+
+</template>

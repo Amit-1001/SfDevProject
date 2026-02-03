@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Skills_Set__c</fullName>
+    <label>Skills Set</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Salesforce_Roles__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Admin Concept</fullName>
+                <default>false</default>
+                <label>Admin Concept</label>
+            </value>
+            <value>
+                <fullName>Data Security</fullName>
+                <default>false</default>
+                <label>Data Security</label>
+            </value>
+            <value>
+                <fullName>Report</fullName>
+                <default>false</default>
+                <label>Report</label>
+            </value>
+            <value>
+                <fullName>Dashboard</fullName>
+                <default>false</default>
+                <label>Dashboard</label>
+            </value>
+            <value>
+                <fullName>Flow</fullName>
+                <default>false</default>
+                <label>Flow</label>
+            </value>
+            <value>
+                <fullName>Apex</fullName>
+                <default>false</default>
+                <label>Apex</label>
+            </value>
+            <value>
+                <fullName>Trigger</fullName>
+                <default>false</default>
+                <label>Trigger</label>
+            </value>
+            <value>
+                <fullName>Test Class</fullName>
+                <default>false</default>
+                <label>Test Class</label>
+            </value>
+            <value>
+                <fullName>Async Apex</fullName>
+                <default>false</default>
+                <label>Async Apex</label>
+            </value>
+            <value>
+                <fullName>Integretion</fullName>
+                <default>false</default>
+                <label>Integretion</label>
+            </value>
+            <value>
+                <fullName>VisualForce</fullName>
+                <default>false</default>
+                <label>VisualForce</label>
+            </value>
+            <value>
+                <fullName>Aura</fullName>
+                <default>false</default>
+                <label>Aura</label>
+            </value>
+            <value>
+                <fullName>LWC</fullName>
+                <default>false</default>
+                <label>LWC</label>
+            </value>
+            <value>
+                <fullName>Jira</fullName>
+                <default>false</default>
+                <label>Jira</label>
+            </value>
+            <value>
+                <fullName>Smartsheets</fullName>
+                <default>false</default>
+                <label>Smartsheets</label>
+            </value>
+            <value>
+                <fullName>Deployment</fullName>
+                <default>false</default>
+                <label>Deployment</label>
+            </value>
+            <value>
+                <fullName>Lucid Chart</fullName>
+                <default>false</default>
+                <label>Lucid Chart</label>
+            </value>
+            <value>
+                <fullName>G suite</fullName>
+                <default>false</default>
+                <label>G suite</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Admin</controllingFieldValue>
+            <controllingFieldValue>Developer</controllingFieldValue>
+            <controllingFieldValue>Quality Analyst</controllingFieldValue>
+            <valueName>Admin Concept</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Admin</controllingFieldValue>
+            <controllingFieldValue>Developer</controllingFieldValue>
+            <controllingFieldValue>Quality Analyst</controllingFieldValue>
+            <valueName>Data Security</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Admin</controllingFieldValue>
+            <controllingFieldValue>Developer</controllingFieldValue>
+            <controllingFieldValue>Quality Analyst</controllingFieldValue>
+            <valueName>Report</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Admin</controllingFieldValue>
+            <controllingFieldValue>Developer</controllingFieldValue>
+            <controllingFieldValue>Quality Analyst</controllingFieldValue>
+            <valueName>Dashboard</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Admin</controllingFieldValue>
+            <controllingFieldValue>Developer</controllingFieldValue>
+            <controllingFieldValue>Architect</controllingFieldValue>
+            <valueName>Flow</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Admin</controllingFieldValue>
+            <controllingFieldValue>Business Analyst</controllingFieldValue>
+            <controllingFieldValue>Architect</controllingFieldValue>
+            <controllingFieldValue>Project Manager</controllingFieldValue>
+            <valueName>Smartsheets</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Admin</controllingFieldValue>
+            <controllingFieldValue>Business Analyst</controllingFieldValue>
+            <controllingFieldValue>Project Manager</controllingFieldValue>
+            <valueName>Lucid Chart</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Admin</controllingFieldValue>
+            <controllingFieldValue>Business Analyst</controllingFieldValue>
+            <controllingFieldValue>Project Manager</controllingFieldValue>
+            <valueName>G suite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Developer</controllingFieldValue>
+            <valueName>Apex</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Developer</controllingFieldValue>
+            <valueName>Trigger</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Developer</controllingFieldValue>
+            <valueName>Test Class</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Developer</controllingFieldValue>
+            <valueName>Async Apex</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Analyst</controllingFieldValue>
+            <controllingFieldValue>Project Manager</controllingFieldValue>
+            <valueName>Jira</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Architect</controllingFieldValue>
+            <valueName>Deployment</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

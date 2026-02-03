@@ -1,0 +1,27 @@
+<apex:page standardController ="Account" extensions="AccountContactExt" lightningStylesheets="true">
+<!-- Begin Default Content REMOVE THIS -->
+<apex:form>
+    <apex:pageMessages id="messages"/>
+<apex:pageBlock title="Account Details">
+    <apex:pageBlockSection columns="1">
+        <apex:outputField value="{!acc.Name}"></apex:outputField>
+        <apex:outputField value="{!acc.Industry}"></apex:outputField>
+        <apex:outputField value="{!acc.Phone}"></apex:outputField>
+    </apex:pageBlockSection>
+</apex:pageBlock>
+
+<apex:pageBlock title="Related Contacts">
+    <apex:pageBlockSection>
+        <apex:pageBlockTable value="{!contactList}" var="con" id="contactTable">
+                <apex:column value="{!con.FirstName}"/>
+                <apex:column value="{!con.LastName}"/>
+                <apex:column value="{!con.Email}"/>
+                <apex:column value="{!con.Phone}"/>
+        </apex:pageBlockTable>
+
+    </apex:pageBlockSection>
+
+</apex:pageBlock>
+
+</apex:form>
+</apex:page>
