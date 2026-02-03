@@ -28,7 +28,7 @@ public with sharing class AccountContactExt {
     }
 
     // save contact logic
-    public void saveContact{}{
+    public void saveContact(){
         try {
             
         if(String.isEmpty(newContact.FirstName) || String.isEmpty(newContact.LastName)){

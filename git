@@ -1,0 +1,29 @@
+[33mcommit 085cf2119c489e4ce94fec782ebac0956eb4897f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mdevelop[m[33m)[m
+Merge: 0fe8ea1 0f568a6
+Author: Amit Nitnaware <88904907+Amit-1001@users.noreply.github.com>
+Date:   Wed Feb 4 01:17:20 2026 +0530
+
+    Merge pull request #2 from Amit-1001/develop
+    
+    Develop- Merging to main
+
+[33mcommit 0f568a6fe5d4e7e886fd3ea9f00fcde5c82a275c[m[33m ([m[1;31morigin/develop[m[33m)[m
+Merge: 0fe8ea1 59562af
+Author: Amit Nitnaware <88904907+Amit-1001@users.noreply.github.com>
+Date:   Wed Feb 4 00:49:46 2026 +0530
+
+    Merge pull request #1 from Amit-1001/feature/TakeContactInput
+    
+    feature/TakeContactInput
+
+[33mcommit 59562af70248d7042c3ad4dc495f828fd0c6abd9[m[33m ([m[1;31morigin/feature/TakeContactInput[m[33m)[m
+Author: Amit-1001 <amit.nitnaware03@gmail.com>
+Date:   Wed Feb 4 00:31:45 2026 +0530
+
+    feature/TakeContactInput
+
+[33mcommit 0fe8ea1445da7b01db3ceaf8926da8d01cf82266[m
+Author: Amit-1001 <amit.nitnaware03@gmail.com>
+Date:   Tue Feb 3 23:37:06 2026 +0530
+
+    First commit
