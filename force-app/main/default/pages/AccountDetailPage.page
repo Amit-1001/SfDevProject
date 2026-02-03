@@ -1,4 +1,4 @@
-<apex:page standardController ="Account" extensions="AccountContactExt" lightningStylesheets="true">
+<apex:page standardController="Account" extensions="AccountContactExt" lightningStylesheets="true">
 <!-- Begin Default Content REMOVE THIS -->
 <apex:form>
     <apex:pageMessages id="messages"/>
@@ -30,15 +30,14 @@
         <apex:inputField value="{!newContact.LastName}"></apex:inputField>
         <apex:inputField value="{!newContact.Email}"></apex:inputField>
         <apex:inputField value="{!newContact.Phone}"></apex:inputField>
-        
-        <apex:pageBlockButtons>
-            <apex:commandButton value="Save contact" action="{!saveContact}" rendered="contactTable message"></apex:commandButton>
-        </apex:pageBlockButtons>
-
-
     </apex:pageBlockSection>
+    <apex:pageBlockButtons>
+            <apex:commandButton value="Save contact" action="{!saveContact}" rendered="contactTable message"></apex:commandButton>
+    </apex:pageBlockButtons>
 
 </apex:pageBlock>
+
+
 
 </apex:form>
 </apex:page>

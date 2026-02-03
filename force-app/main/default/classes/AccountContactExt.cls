@@ -4,6 +4,7 @@ public with sharing class AccountContactExt {
     public List<Contact> contactList {get; private set;}
 
     public Contact newContact{get; set;}
+    
 
     public AccountContactExt(ApexPages.StandardController controller) {
         this.accId = controller.getId();
@@ -41,7 +42,7 @@ public with sharing class AccountContactExt {
         }
 
         // check if user has permision to create contact
-        if(!Schema.SObjectField.Contact.AccountId.isCreateable()){
+        if(!Schema.sObjectType.Contact.isCreateable()){
             ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, 'You do not have permission to create contact'));
             return;
         }
@@ -54,8 +55,8 @@ public with sharing class AccountContactExt {
 
             
             // Reset form & refresh list
-            newContact = new Contact(AccountId = accountId);
-            loadContacts();
+            newContact = new Contact(AccountId = accId);
+            loadContact();
 
         } catch (Exception e) {
             ApexPages.addMessage(new ApexPages.Message(
