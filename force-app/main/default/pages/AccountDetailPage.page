@@ -31,8 +31,9 @@
         <apex:inputField value="{!newContact.Email}"></apex:inputField>
         <apex:inputField value="{!newContact.Phone}"></apex:inputField>
     </apex:pageBlockSection>
-    <apex:pageBlockButtons>
-            <apex:commandButton value="Save contact" action="{!saveContact}" rendered="contactTable message"></apex:commandButton>
+    <apex:pageBlockButtons location="bottom">
+            <apex:commandButton value="Save contact" action="{!saveContact}" rerender="contactTable messages"></apex:commandButton>
+            
     </apex:pageBlockButtons>
 
 </apex:pageBlock>

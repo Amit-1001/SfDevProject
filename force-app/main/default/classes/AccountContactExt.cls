@@ -32,8 +32,8 @@ public with sharing class AccountContactExt {
     public void saveContact(){
         try {
             
-        if(String.isEmpty(newContact.FirstName) || String.isEmpty(newContact.LastName)){
-            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, 'First Name and Last Name are required'));
+        if(String.isEmpty(newContact.LastName)){
+            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, 'Last Name are required'));
             return;
         }
         if(!String.isEmpty(newContact.Email) && !newContact.Email.contains('@')){
