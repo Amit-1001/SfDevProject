@@ -40,7 +40,7 @@ public with sharing class CaseTriggerHandler {
 
 
     Database.SaveResult[] results = Database.update(accountToUpdate,false);
-        for(Database.SaveResult sr: results){
+    for(Database.SaveResult sr: results){
             if(!sr.isSuccess()){
 
                 String er = sr.getErrors().toString();

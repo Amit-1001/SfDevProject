@@ -34,6 +34,7 @@ private class CaseTriggerTest {
 
         for(Integer i=0; i<300; i++){
             Case caseObj = new Case(AccountId = account.Id, Status = 'New', Subject = 'Test Case:'+i, Origin = 'Email');
+            //insert caseObj;
             caseList.add(caseObj);
         }
 
@@ -57,7 +58,6 @@ private class CaseTriggerTest {
 
         List<Case> caseList = [SELECT Id, Status, Subject, Origin FROM Case WHERE AccountId =: account.Id];
         System.debug('caseList Size:'+caseList.size());
-
         System.Assert.areEqual(300, account.Number_of_Cases__c);
     }
 }
