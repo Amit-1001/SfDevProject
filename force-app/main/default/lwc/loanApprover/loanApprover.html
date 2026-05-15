@@ -1,0 +1,65 @@
+<template>
+    <lightning-card title="Loan Review Console">
+        <div>
+            <!-- Global Spinner -->
+            <template lwc:if={isLoading}>
+
+                <lightning-spinner
+                    alternative-text="Loading"
+                    size="medium">
+                </lightning-spinner>
+
+            </template>
+            <template lwc:if={loanList}>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Loan Name</th>
+                            <th>Customer Name</th>
+                            <th>Loan Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <template for:each={loanList} for:item="loan">
+                        
+                            <tr key={loan.Id}>
+                                <td>{loan.Name}</td>
+                                <td>{loan.Customer__r.Name}</td>
+                                <td>{loan.Loan_Amount__c}</td>
+                                <td>{loan.Status__c}</td>
+                                <td>
+                                    <lightning-button
+                                        label="Approve" 
+                                        variant="brand" 
+                                        data-id ={loan.Id}
+                                        disabled={isLoading}
+                                        onclick={handleApproveClick}>
+                                    </lightning-button>
+                                    <lightning-button
+                                        label="Reject" 
+                                        variant="destructive" 
+                                        data-id ={loan.Id}
+                                        disabled={isLoading}
+                                        onclick={handleRejectClick}>
+                                    </lightning-button>
+                                    
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                
+                </table>
+            </template>
+            <!-- No Records -->
+                <template lwc:else>
+
+                    <p>No Pending Loans Found</p>
+
+                </template>
+        </div>
+
+    </lightning-card>
+    
+</template>

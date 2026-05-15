@@ -1,0 +1,61 @@
+<template>
+
+    <div>
+
+        <lightning-card title="Loan Record Viewer with LDS">
+
+            <template lwc:if={hasRecord}>
+                
+                <div class="slds-p-around_medium">
+
+                <p>
+
+                    <strong>Loan Name:</strong>
+
+                    {loanName}
+
+                </p>
+
+                <p class="slds-m-top_small">
+
+                    <strong>Customer:</strong>
+
+                    {loanCustomerName}
+
+                </p>
+
+                <p class="slds-m-top_small">
+
+                    <strong>Loan Amount:</strong>
+
+                    {loanAmount}
+
+                </p>
+
+                <p class="slds-m-top_small">
+
+                    <strong>Status:</strong>
+
+                    <span class={statusClass}>
+
+                        {loanStatus}
+
+                    </span>
+
+                </p>
+
+            </div>
+
+            </template>
+
+            <template lwc:else>
+                <lightning-spinner
+                alternative-text="Record loading..."
+                ></lightning-spinner>
+            </template>
+
+        </lightning-card>
+
+    </div>
+    
+</template>

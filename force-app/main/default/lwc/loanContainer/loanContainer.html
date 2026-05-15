@@ -1,0 +1,17 @@
+<template>
+
+    <div>
+        <lightning-card title="Loan Container">
+
+            <c-loan-form oncreate={handleCreateLoan}></c-loan-form>
+            <lightning-button label="Reset Form" onclick={handleReset}></lightning-button>
+            
+            <c-loan-list loans={loans}></c-loan-list>
+
+            
+
+        </lightning-card>
+
+    </div>
+    
+</template>

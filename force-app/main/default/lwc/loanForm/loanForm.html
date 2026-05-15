@@ -1,0 +1,27 @@
+<template>
+
+    <lightning-input
+    label="Loan Name"
+    value = {loanName}
+    onchange={handleChangeName}
+    ></lightning-input>
+
+    <lightning-input
+    label="Amount"
+    type="number"
+    value = {amount}
+    onchange={handleChangeAmount}
+    ></lightning-input>
+
+    <lightning-input 
+        label="Customer" 
+        value={customer} 
+        onchange={handleChangeCustomer}>
+    </lightning-input>
+
+    <lightning-button 
+        label="Submit" 
+        onclick={handleSubmit}>
+    </lightning-button>
+    
+</template>

@@ -1,0 +1,28 @@
+<template>
+    <div>
+        <lightning-card title="Case Dashboard">
+
+            <template lwc:if={isLoading}>
+                <lightning-spinner></lightning-spinner>
+            </template>
+
+            <template lwc:if={caseList}>
+                <lightning-datatable
+                key-field="Id"
+                data={caseList}
+                columns ={columns}
+                onrowaction={handleRowAction}
+                >
+                </lightning-datatable>
+
+            </template>
+
+            <template lwc:else>
+                No case found!
+
+            </template>
+
+        </lightning-card>
+    </div>
+    
+</template>

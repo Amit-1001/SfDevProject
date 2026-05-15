@@ -1,11 +1,15 @@
-import { api, LightningElement } from 'lwc';
+import { api, LightningElement, track } from 'lwc';
 
 export default class ApiAndtrack extends LightningElement {
 
-    @api myName = 'This is Child Component value'
+    @api message = 'This is public property @api'
 
-    updateProperty(event){
-        this.myName = event.target.value;
+    privateMessage = 'This is private property'
+    @track
+    dynamicMessage;
+
+    
+    handleChange(event){
+        this.dynamicMessage = event.target.value;
     }
-
 }

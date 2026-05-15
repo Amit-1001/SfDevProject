@@ -1,0 +1,27 @@
+<template>
+    <div>
+        <lightning-card title="Loan DataTable">
+            <template lwc:if={isLoading}>
+                <lightning-spinner></lightning-spinner>
+            </template>
+
+
+        <!-- Datatable -->
+        <template lwc:if={loanList}>
+            <lightning-datatable
+                key-field="Id"
+                data={loanList}
+                columns={columns}
+                onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </template>
+
+        <!-- No Data -->
+        <template lwc:else>
+            <p>No Pending Loans</p>
+        </template>
+
+        </lightning-card>
+    </div>
+    
+</template>

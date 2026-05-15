@@ -1,7 +1,7 @@
 <apex:page standardController="Account" extensions="AccountContactExt" lightningStylesheets="true">
 <!-- Begin Default Content REMOVE THIS -->
-<apex:form>
-    <apex:outputPanel>
+<apex:form >
+    <apex:outputPanel >
         <apex:pageMessages id="messages"/>
     </apex:outputPanel>
 <apex:pageBlock title="Account Details">
@@ -13,7 +13,7 @@
 </apex:pageBlock>
 
 <apex:pageBlock title="Related Contacts">
-    <apex:pageBlockSection>
+    <apex:pageBlockSection >
         <apex:pageBlockTable value="{!contactList}" var="con" id="contactTable">
                 <apex:column value="{!con.FirstName}"/>
                 <apex:column value="{!con.LastName}"/>

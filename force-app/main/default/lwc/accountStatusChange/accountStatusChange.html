@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Account Details">
+    <div>
+        <template lwc:if={account}>
+            <p>Account Name: {account.Name}</p>
+            <p>Account Active(Yes/No): {account.Active__c}</p>
+
+            <template lwc:if={isLoading}> <!--when isLoading is false show loading spinner-->
+                <lightning-spinner alternative-text="Processing...">
+
+                </lightning-spinner>
+            </template>
+
+            <template lwc:else>
+                <lightning-button
+                    label="Deactivate Account"
+                    variant="brand"
+                    onclick={handleClick}
+                    disabled={isLoading}
+                >
+                </lightning-button>
+            </template>
+        </template>
+        <template lwc:else>
+            <p>Account Not found!</p>
+        </template>
+
+    </div>
+
+    </lightning-card>
+    
+</template>
