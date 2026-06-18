@@ -4,6 +4,14 @@
 
         <lightning-card title="Loan Record Viewer with LDS">
 
+            <template if:true={isLoading}>
+                <lightning-spinner
+                alternative-text="Updating record.."
+                >
+
+                </lightning-spinner>
+            </template>
+
             <template lwc:if={hasRecord}>
                 
                 <div class="slds-p-around_medium">
@@ -43,15 +51,30 @@
                     </span>
 
                 </p>
+                <!-- Buttons -->
+                <div class="slds-m-top_medium">
+                    <lightning-button
+                        label="Approve"
+                        variant="brand"
+                        onclick={handleApprove}
+                    > </lightning-button>
+
+                    <lightning-button
+                        label="Reject"
+                        variant="destructive"
+                        onclick ={handleReject}
+                    > </lightning-button>
+
+                
+
+                </div>
 
             </div>
 
             </template>
 
             <template lwc:else>
-                <lightning-spinner
-                alternative-text="Record loading..."
-                ></lightning-spinner>
+                <p>No record found!!</p>
             </template>
 
         </lightning-card>

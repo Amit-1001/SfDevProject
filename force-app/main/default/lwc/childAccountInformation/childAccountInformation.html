@@ -1,0 +1,18 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+    </template>
+
+    <lightning-card title="Account Dashboard Child Component">
+
+        <lightning-input label="Enter Account Name" value={accountName} onchange={handleName}></lightning-input>
+        <lightning-input label="Enter Rating" value={rating} onchange={handleRating}></lightning-input>
+        <lightning-input label='Enter Industry' value ={industry} onchange={handleIndustry}></lightning-input>
+        <lightning-button label="Submit" type="submit" onclick={handleSave} disabled={isDisable}></lightning-button>
+
+
+    </lightning-card>
+
+
+    
+</template>

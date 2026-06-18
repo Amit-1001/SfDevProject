@@ -1,0 +1,21 @@
+<template>
+    <!-- 1. Include Child Component -->
+    <lightning-card title="Parent Container" icon-name="standard:account">
+        <div class="slds-var-m-around_medium">
+            <c-child-account-information onchildsave={handleChildSave}></c-child-account-information>
+        </div>
+    </lightning-card>
+
+    <!-- 2. Display Received Information -->
+    <template lwc:if={hasData}>
+        <lightning-card title="Submitted Account Details" icon-name="utility:preview">
+            <div class="slds-var-m-around_medium">
+                <p><strong>Target Object:</strong> {objectApiName}</p>
+                <p><strong>Account Name:</strong> {accountName}</p>
+                <p><strong>Rating:</strong> {accountRating}</p>
+                <p><strong>Industry:</strong> {accountIndustry}</p>
+            </div>
+        </lightning-card>
+    </template>
+    
+</template>

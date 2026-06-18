@@ -1,0 +1,59 @@
+<template>
+    <lightning-card title="Case ServerSide Pagination Dashboard">
+
+        <div class="slds-p-around_medium">
+            <template if:true={isLoading}>
+                <lightning-spinner
+                alternative-text="loading Cases..."
+                >
+
+                </lightning-spinner>
+            </template>
+
+
+            <template lwc:if={hasList}>
+                <lightning-datatable
+                    key-field="Id"
+                    data = {caseList}
+                    columns={columns}
+                >
+
+                </lightning-datatable>
+
+                <div >
+
+                    <lightning-button
+                    label="Previous"
+                    onclick={handlePrevious}
+                    >
+
+                    </lightning-button>
+
+                    <span class="slds-p-horizontal_medium">
+
+                        Page {currentPage}
+                        of
+                        {totalPages}
+
+                    </span>
+
+                    <lightning-button
+                    label="Next"
+                    onclick={handleNext}
+                    >
+
+                    </lightning-button>
+
+                </div>
+
+
+            </template>
+        </div>
+            <template if:false={hasList}>
+                No case found!
+                
+            </template>
+
+    </lightning-card>
+    
+</template>

@@ -1,0 +1,9 @@
+<template>
+
+    <lightning-card title="Display List">
+            <template for:each={languages} for:item="language">
+                <p key={language}>{language}</p>
+            </template>
+    </lightning-card>
+    
+</template>

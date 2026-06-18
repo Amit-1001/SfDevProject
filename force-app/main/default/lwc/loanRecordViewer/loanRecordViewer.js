@@ -1,7 +1,7 @@
 import { api, LightningElement, wire } from 'lwc';
 
-import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
-
+import { getRecord, getFieldValue , updateRecord} from 'lightning/uiRecordApi';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 // Schema Imports
 import NAME_FIELD
@@ -28,6 +28,7 @@ export default class LoanRecordViewer extends LightningElement {
 
     @api recordId
 
+    isLoading = false;
     
     //wire Adapater
     @wire(getRecord,{recordId:'$recordId', fields:FIELDS})
@@ -65,4 +66,63 @@ export default class LoanRecordViewer extends LightningElement {
     get hasRecord(){
         return (this.loanRecord.data !=null);
     }
+
+    handleApprove(){
+        this.updateStatus('Approved');
+    }
+
+    handleReject(){
+        this.updateStatus('Rejected');
+    }
+
+    updateStatus(Status){
+        this.isLoading = true;
+         // Fields Object
+        const fields ={
+            Id: this.recordId,
+            Status__c: Status
+        }
+        // above here we hardcoded the Field Name instead we can use FieldApiName
+
+        /**     production grade
+         *      const field={
+         *          Id: this.recordId,
+         *          STATUS_FIELD.fieldApiName: status 
+         * }
+         */
+
+        //Input to updateRecord 
+        const recordInput = {
+            fields
+        }
+
+        //LDS Update Record Automatically refresh the data on UI and has in built caching, FLS etc.
+        updateRecord(recordInput)
+        .then(result=>{
+            this.showToast('Success',result,'success');
+        })
+        .catch(error=>{
+            this.showToast('Error', error.body.message,'error');
+        })
+        .finally(()=>{
+            this.isLoading = false;
+        })
+
+    }
+
+
+
+    showToast(title,message,variant){
+        this.dispatchEvent(
+            new ShowToastEvent({
+                title,
+                message,
+                variant
+            })
+
+        );
+    }
+
+
+
 }

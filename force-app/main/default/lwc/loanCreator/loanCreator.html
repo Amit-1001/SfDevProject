@@ -1,0 +1,60 @@
+<template>
+    <div>
+        <lightning-card title="Loan Creator">
+            <template if:true={isLoading}
+            ></template>
+
+
+            <div class="slds-p-around_medium">
+
+                <lightning-input
+                label="Loan Name:"
+                value={loanName}
+                onchange={handleName}
+                > </lightning-input>
+
+                <lightning-input
+                label="Loan Amount:"
+                value={loanAmount}
+                onchange={handleAmount}
+                ></lightning-input>
+
+                <lightning-input
+                label="Loan Status:"
+                value={loanStatus}
+                onchange={handleStatus}
+                ></lightning-input>
+
+                <lightning-record-picker
+
+                label="Customer"
+
+                placeholder="Search Customer"
+
+                object-api-name="Customer"
+
+                onchange={handleCustomerSelect}>
+
+                </lightning-record-picker>
+
+                <lightning-button
+                label="Create Loan"
+
+                variant="brand"
+
+                onclick={handleCreateLoan}
+
+                class="slds-m-top_medium"
+                >
+
+                </lightning-button>
+
+            
+
+            </div>
+
+        </lightning-card>
+
+    </div>
+    
+</template>

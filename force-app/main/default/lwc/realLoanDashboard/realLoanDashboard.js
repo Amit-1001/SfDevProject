@@ -34,7 +34,7 @@ export default class RealLoanDashboard extends LightningElement {
 
     currentPage = 1;
 
-    totalPages = 0;;
+    totalPages = 0;
 
     delayInterval;
 
@@ -85,7 +85,6 @@ export default class RealLoanDashboard extends LightningElement {
 
 
     // Serach loan By Name
-
     @wire(searchLoanByName,{name:'$name'})
     wiredLoans(result){
         this.wiredResult = result;
@@ -126,7 +125,7 @@ export default class RealLoanDashboard extends LightningElement {
             return refreshApex(this.wiredResult);
         })
         .catch(error=>{
-            this.showToast('Error',error.message.body,'error');
+            this.showToast('Error',error.body.message,'error');
         }).finally(()=>{
             this.isLoading = false;
         })
@@ -173,7 +172,7 @@ export default class RealLoanDashboard extends LightningElement {
             this.showToast('Success',result,'success');
             return refreshApex(this.wiredResult);
         }).catch(error=>{
-            this.showToast('Error',error.message.body,'error');
+            this.showToast('Error',error.body.message,'error');
         })
         .finally(()=>{
         this.isLoading = false;
@@ -188,7 +187,7 @@ export default class RealLoanDashboard extends LightningElement {
             this.showToast('Success',result,'success');
             return refreshApex(this.wiredResult);
         }).catch(error=>{
-            this.showToast('Error',error.message.body,'error');
+            this.showToast('Error',error.body.message,'error');
         })
         .finally(()=>{
         this.isLoading = false;

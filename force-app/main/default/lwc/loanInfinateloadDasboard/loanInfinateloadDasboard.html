@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Loan Infinite Loading">
+        <div class="slds-p-around_medium" style="height:300px;">
+            <lightning-datatable
+
+                key-field="Id"
+
+                data={loanList}
+
+                columns={columns}
+
+                enable-infinite-loading
+
+                onloadmore={loadMoreData}
+
+                is-loading={isLoading}>
+
+            </lightning-datatable>
+
+        </div>
+
+    </lightning-card>
+    
+</template>

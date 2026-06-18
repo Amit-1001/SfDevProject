@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Loan Publisher">
+        <div class="slds-p-around_medium">
+            <lightning-datatable
+
+            key-field="Id"
+
+            data={loanList}
+
+            columns={columns}
+
+            onrowaction={handleRowAction}>
+
+        </lightning-datatable>
+
+        </div>
+
+    </lightning-card>
+    
+</template>

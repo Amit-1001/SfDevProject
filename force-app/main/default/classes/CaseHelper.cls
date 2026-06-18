@@ -3,7 +3,7 @@ public with sharing class CaseHelper {
     public static List<Case> getAllCases(){
         try {
             
-            List<Case> caseList = [Select Id,CaseNumber,Priority,Origin, Status from Case where Status!='Closed'];
+            List<Case> caseList = [Select Id,CaseNumber,Priority,Origin, Status from Case where Status!='Closed' limit 10];
             if(!caseList.isEmpty()){
                 return caseList;
             }
@@ -42,6 +42,37 @@ public with sharing class CaseHelper {
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
+    }
+
+    @AuraEnabled(cacheable=true)
+    public static List<Case> getPaginatedCases(Integer pageSize, Integer pageNumber){
+        // server side pagination
+        try {
+            Integer offsetValue =
+
+            (pageNumber - 1)
+            * pageSize;
+
+            return [
+
+                SELECT
+                    Id,CaseNumber,Priority,Origin, Status
+                FROM Case
+                WHERE Status!='Closed'
+
+                ORDER BY CreatedDate DESC
+
+                LIMIT :pageSize
+
+                OFFSET :offsetValue
+            ];
+
+        } catch (Exception e) {
+            throw new AuraHandledException('Exception occured:'+e);
+            
+        }
+
+
     }
 
 

@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Parent Component">
+        <lightning-input label="Enter Message: " value={message} onchange={handleChange}></lightning-input>
+        <c-child-message-receive message={message}></c-child-message-receive>
+
+    </lightning-card>
+    
+    
+</template>

@@ -44,4 +44,11 @@ public with sharing class AccountLWCHelper {
     }
         
     }
+
+    @AuraEnabled(cacheable = true)
+    public static List<Account> getAllAccounts(){
+
+        return [SELECT Id, Name, Active__c FROM Account limit 5];
+
+    }
 }

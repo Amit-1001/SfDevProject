@@ -5,7 +5,7 @@ public with sharing class LoanApplicationHelper {
 
     @AuraEnabled(cacheable=true)
     public static List<Loan_Application__c> getAllLoans(){
-        List<Loan_Application__c> loans = [Select Id, Name, Loan_Amount__c, Status__c,Customer__r.Name from Loan_Application__c];
+        List<Loan_Application__c> loans = [Select Id, Name, Loan_Amount__c, Status__c,Customer__r.Name from Loan_Application__c limit 20];
 
         if(loans == null && loans.isEmpty()){
             throw new AuraHandledException('No loan found!');
@@ -42,7 +42,7 @@ public with sharing class LoanApplicationHelper {
     public static List<Loan_Application__c> getPendingLoans(){
         
         try {
-            List<Loan_Application__c> loanList = [SELECT Id, Name , Customer__r.Name , Loan_Amount__c,Status__c FROM Loan_Application__c WHERE Status__c =: 'Pending'];
+            List<Loan_Application__c> loanList = [SELECT Id, Name , Customer__r.Name , Loan_Amount__c,Status__c FROM Loan_Application__c WHERE Status__c =: 'Pending' limit 20];
             if(!loanList.isEmpty()){
                 return loanList;
             }
@@ -171,6 +171,28 @@ public with sharing class LoanApplicationHelper {
             throw new AuraHandledException(
                 e.getMessage()
             );
+        }
+
+    }
+
+    // Server side pagination
+    @AuraEnabled(cacheable=true)
+    public static List<Loan_Application__c> getPaginatedLoans(Integer pageSize, Integer pageNumber){
+
+        try {
+
+            Integer offsetValue = (pageNumber-1) * pageSize;
+
+            return [
+                SELECT Id, Name , Customer__r.Name , Loan_Amount__c, Status__c
+                FROM Loan_Application__c
+                ORDER BY CreatedDate DESC
+                LIMIT:pageSize
+                OFFSET:offsetValue
+            ];
+            
+        } catch (Exception e) {
+            throw new AuraHandledException('exception'+e.getMessage());
         }
 
     }

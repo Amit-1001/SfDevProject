@@ -4,9 +4,9 @@ import closeCase from '@salesforce/apex/CaseHelper.closeCase';
 import escalateCase from '@salesforce/apex/CaseHelper.escalateCase';
 import{refreshApex} from '@salesforce/apex';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import {NavigationMixin} from  'lightning/navigation';
 
-
-export default class CaseDashboard extends LightningElement {
+export default class CaseDashboard extends NavigationMixin(LightningElement) {
 
     caseList = [];
     isLoading = false;
@@ -98,6 +98,19 @@ export default class CaseDashboard extends LightningElement {
         this.isLoading = false;
         });
 
+    }
+
+    handleViewAll(){
+        this[NavigationMixin.Navigate]({
+            type:'standard__objectPage',
+            attributes:{
+                objectApiName:'Case',
+                actionName:'list'
+            },
+            state:{
+                filterName:'RecentlyViewedCases'
+            }
+        });
     }
 
       // 🔥 Toast helper
