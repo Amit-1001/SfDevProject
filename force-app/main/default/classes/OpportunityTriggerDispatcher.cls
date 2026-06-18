@@ -2,6 +2,10 @@ public class OpportunityTriggerDispatcher {
     
     public static void dispatch(System.TriggerOperation operationType){
         switch on operationType{
+
+            when BEFORE_UPDATE{
+                OpportunityTriggerHandler.restrictOppModify((Map<Id,Opportunity>)Trigger.newMap,(Map<Id,Opportunity>)Trigger.oldMap);
+            }
             when AFTER_INSERT{
                 OpportunityTriggerHandler.handleAfterInsert((Map<Id,Opportunity>)Trigger.newMap);
             }
