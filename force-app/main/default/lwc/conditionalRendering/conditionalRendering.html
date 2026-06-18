@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Condition Rendering">
+
+        <lightning-input type="checkbox" onchange={handleChange}></lightning-input>
+
+        <template if:true={isMessageVisible}>
+            <p>Check box is Selected</p>
+
+        </template>
+
+    </lightning-card>
+    
+</template>

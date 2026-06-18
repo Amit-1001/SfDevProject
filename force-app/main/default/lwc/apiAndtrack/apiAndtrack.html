@@ -1,4 +1,18 @@
 <template>
-    <p>Child Component</p>
-    {myName}
+   <lightning-card title="API and Track Example">
+    <div class="slds-p-around_medium">
+        <!-- Use standard tags for simple text display -->
+        <p>Message from @api: {message}</p>
+         <p>Message from private Property: {privateMessage}</p>
+        <p>Message from @track: {dynamicMessage}</p>
+      
+
+        <!-- Use lightning-input for generic user input -->
+        <lightning-input 
+            label="Dynamic message @track" 
+            value={dynamicMessage} 
+            onchange={handleChange}>
+        </lightning-input>
+   </div>
+   </lightning-card>
 </template>

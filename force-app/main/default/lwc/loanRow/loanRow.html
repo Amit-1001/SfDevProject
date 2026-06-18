@@ -1,0 +1,30 @@
+<template>
+    <!-- Handling only Row Content of Table this will be used in Parent Dashboard LWC-->
+
+<tr>
+        <td>{loan.Name}</td>
+        <td>{loan.Customer__r.Name}</td>
+        <td>{loan.Loan_Amount__c}</td>
+        <td>{loan.Status__c}</td>
+
+        <td>
+
+            <lightning-button
+                label="Approve"
+                variant="brand"
+                disabled={isloading}
+                onclick={handleApprove}>
+            </lightning-button>
+
+            <lightning-button
+                label="Reject"
+                variant="destructive"
+                disabled={isloading}
+                onclick={handleReject}>
+            </lightning-button>
+
+        </td>
+
+</tr>   
+    
+</template>

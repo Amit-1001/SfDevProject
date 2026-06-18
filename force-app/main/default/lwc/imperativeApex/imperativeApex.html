@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Loan Application Detail">
+        <div>
+            <template lwc:if={loanApplication}>
+                <div class="slds-p-around_medium">
+                        <p>Name: {loanApplication.Name}</p>
+                        <p>Customer Name: {loanApplication.Customer__r.Name}</p>
+                        <p>Loan Amount: {loanApplication.Loan_Amount__c}</p>
+                        <p>Status: {loanApplication.Status__c}</p>
+            
+                
+
+                <!-- Show spinner while processing -->
+                <template lwc:if={isLoading}>
+                    <lightning-spinner alt-text="Processing..."></lightning-spinner>
+                </template>
+                
+                <!-- Show button only when NOT loading -->
+                <template lwc:else>
+                    <lightning-button 
+                        label="Approve" 
+                        variant="brand" 
+                        onclick={handleClick}>
+                    </lightning-button>
+                </template>
+                </div>
+                
+            </template>
+        </div>
+
+
+    </lightning-card>
+</template>

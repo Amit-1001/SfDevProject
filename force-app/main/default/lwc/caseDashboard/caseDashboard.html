@@ -1,0 +1,37 @@
+<template>
+    <div>
+        <lightning-card title="Case Dashboard with List View Navigation">
+
+            <template lwc:if={isLoading}>
+                <lightning-spinner></lightning-spinner>
+            </template>
+
+            <template lwc:if={caseList}>
+                <!--Data table-->
+                <lightning-datatable
+                key-field="Id"
+                data={caseList}
+                columns ={columns}
+                onrowaction={handleRowAction}
+                >
+                </lightning-datatable>
+
+                <!--View All Case-->
+                <lightning-button
+                label="View All Case"
+                variant="brand"
+                onclick={handleViewAll}
+                >
+                </lightning-button>
+
+            </template>
+
+            <template lwc:else>
+                No case found!
+
+            </template>
+
+        </lightning-card>
+    </div>
+    
+</template>

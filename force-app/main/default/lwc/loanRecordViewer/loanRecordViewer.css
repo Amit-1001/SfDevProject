@@ -1,0 +1,16 @@
+.green{
+    color: green;
+    font-weight: bold;
+}
+
+.red{
+    color: red;
+    font-weight: bold;
+}
+
+.default{
+
+    color: black;
+
+    font-weight: bold;
+}

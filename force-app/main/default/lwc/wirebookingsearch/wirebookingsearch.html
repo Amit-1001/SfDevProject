@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Booking Search">
+        <div >
+            <lightning-input label="Search Booking" value={bookingName} type="text" onchange={handleChange}></lightning-input>
+            <template lwc:if={bookings}>
+
+                <table >
+                    <thead>
+                        <tr>
+                            <th>Booking Name</th>
+                            <th>Product Name</th>
+                            <th>Total Booking</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={bookings} for:item="booking">
+                            <tr key={booking.Id}>
+                                <td>{booking.Name}</td>
+                                <td>{booking.Product__r.Name}</td>
+                                <td>{booking.Product__r.TotalBooking__c}</td>
+                            </tr>
+                        </template>
+
+                    </tbody>
+
+
+                </table>
+
+            </template>
+            <template lwc:else>
+                <lightning-spinner alternative-text="spining loading......">
+            
+                </lightning-spinner>
+
+            </template>
+        </div>
+    </lightning-card>
+</template>

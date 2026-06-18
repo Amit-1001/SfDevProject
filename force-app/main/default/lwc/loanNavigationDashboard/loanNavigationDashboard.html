@@ -1,0 +1,29 @@
+<template>
+    
+    <lightning-card title="Loan Dashboard Navigation">
+    <div class="slds-p-around_medium">
+                    <template if:true={isLoading}>
+
+                            </template>
+
+
+                            <template lwc:if={hasList}>
+
+                                <lightning-datatable
+                                    key-field="Id"
+                                    data={loanList}
+                                    columns={columns}
+                                    onrowaction={handleRowAction}
+                                >
+
+                                </lightning-datatable>
+
+                            </template>
+
+                            <template lwc:else>
+                                <p>No loan found!</p>
+                            </template>
+        </div>
+    </lightning-card>
+    
+</template>

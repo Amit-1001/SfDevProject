@@ -1,0 +1,29 @@
+<template>
+    <div>
+        <template lwc:if={loans}>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Loan Name</th>
+                        <th>Amount</th>
+                        <th>Customer Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={loans} for:item="loan">
+                        <tr key={loan.Id}>
+                            <td>{loan.Name}</td>
+                            <td>{loan.Loan_Amount__c}</td>
+                            <td>{loan.Customer__r.Name}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+
+        </template>
+        <template lwc:else>
+            No pending loans
+        </template>
+    </div>
+    
+</template>

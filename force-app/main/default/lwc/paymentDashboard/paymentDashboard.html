@@ -1,0 +1,28 @@
+<template>
+    <lightning-card
+        title="Loan Payment">
+
+        <div class="slds-p-around_medium">
+
+            <template lwc:if={isLoading}>
+
+                <lightning-spinner>
+                </lightning-spinner>
+
+            </template>
+
+            <lightning-button
+
+                label="Pay EMI"
+
+                variant="brand"
+
+                onclick={handlePayment}>
+
+            </lightning-button>
+
+        </div>
+
+    </lightning-card>
+    
+</template>

@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Accounts List">
+    
+        <Template lwc:if={isLoading}>
+            <lightning-spinner
+            alternative-text="Account List Loading"
+            >
+
+            </lightning-spinner>
+
+        </Template>
+        
+        <template lwc:if={hasData}>
+            <lightning-datatable
+            key-field="Id"
+            data={accountList}
+            columns={columns}
+        >
+        </lightning-datatable>
+
+        </template>
+
+        <template lwc:else>
+            <p> No Account Found!</p>
+
+        </template>
+        
+
+    </lightning-card>
+    
+</template>

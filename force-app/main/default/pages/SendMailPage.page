@@ -1,0 +1,21 @@
+<apex:page controller="EmailSender">
+ <apex:form >
+     		
+            <apex:pageBlock title="Email">
+                <apex:outputPanel >
+                    <apex:pageMessages id="messages"/>
+                </apex:outputPanel>
+                <apex:pageBlockSection columns="1">
+                   
+                    <apex:inputText label="Receiver Email:" value="{!receiverEmail}"/>
+                    <apex:inputText label="Subject:" value="{!subject}"/>
+                    <apex:inputTextarea label="Message" value="{!message}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons location="bottom">
+                	<apex:commandButton action="{!sendEmail}" value="Send Email" rerender="messages"/>
+                </apex:pageBlockButtons>
+            
+            </apex:pageBlock>
+    
+   </apex:form>
+</apex:page>

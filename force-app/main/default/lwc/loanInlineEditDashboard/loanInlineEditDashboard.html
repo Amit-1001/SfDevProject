@@ -1,0 +1,22 @@
+<template>
+    <div>
+        <template lwc:if={isLoading}>
+            <lightning-spinner></lightning-spinner>
+        </template>
+
+        <template lwc:if={loanList}>
+            <lightning-datatable
+                key-field="Id"
+                data={loanList}
+                columns={columns}
+                draft-values={draftValues}
+                onsave={handleSave}
+            >
+
+            </lightning-datatable>
+
+        </template>
+
+    </div>
+    
+</template>

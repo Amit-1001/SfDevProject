@@ -1,0 +1,27 @@
+<template>
+    <div>
+        <lightning-card
+        title="Loan Sorting by Amount"
+        >
+
+        <template lwc:if={hasList}>
+            <lightning-datatable
+                key-field="Id"
+                data = {loanList}
+                columns={columns}
+                sorted-by={sortedBy}
+                sorted-direction={sortDirection}
+                onsort ={handleSort}
+            >
+
+            </lightning-datatable>
+        </template>
+
+        <template lwc:else>
+            No loan found!
+        </template>
+
+        </lightning-card>
+    </div>
+    
+</template>
