@@ -34,10 +34,12 @@ export default class LoanInfinateloadDasboard extends LightningElement {
             this.loanList = result.map(loan=>{
                 return{
                     ...loan,
-                    CustomerName: loan.Customer__r.Name
+                    CustomerName: loan.Customer__r?.Name || 'No Customer'
                 }
             
             });
+            console.log('Step 1');
+            console.log('Intial Loan List:',result);
         })
         .catch(error=>{
             console.log(error);
@@ -75,8 +77,7 @@ export default class LoanInfinateloadDasboard extends LightningElement {
 
                 ...loan,
 
-                CustomerName:
-                loan.Customer__r?.Name
+                CustomerName: loan.Customer__r?.Name || 'No Customer'
             };
         });
 
