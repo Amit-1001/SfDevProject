@@ -30,7 +30,7 @@ export default class LoanRecordViewer extends LightningElement {
 
     isLoading = false;
     
-    //wire Adapater
+    //wire Adapater LDS
     @wire(getRecord,{recordId:'$recordId', fields:FIELDS})
     loanRecord;
 
