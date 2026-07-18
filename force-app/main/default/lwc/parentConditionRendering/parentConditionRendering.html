@@ -1,0 +1,18 @@
+<template>
+
+    <lightning-card title="This is Parent Component with Condition rendering!">
+        <lightning-button label="Show Child A Component" onclick={handleClick} data-name="childA"></lightning-button>
+        <lightning-button label="Show Child B Component" onclick={handleClick} data-name="childB"></lightning-button>
+        <br/> Message from child: {message}
+
+        <template if:true={showChildA}>
+            <c-child-a onchildaevent={handleChildEvent}></c-child-a>
+        </template>
+
+        <template if:true={showChildB}>
+            <c-child-b onchildbevent={handleChildEvent}></c-child-b>
+        </template>
+
+    </lightning-card>
+    
+</template>
