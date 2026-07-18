@@ -24,6 +24,8 @@ export default class LoanCreator extends NavigationMixin(LightningElement) {
 
     isLoading = false;
 
+    
+
     handleName(event){
         this.loanName = event.target.value;
     }
