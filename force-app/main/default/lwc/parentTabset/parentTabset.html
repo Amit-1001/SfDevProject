@@ -1,0 +1,19 @@
+<template>
+
+    <lightning-card title="Parent Component with Tabset">
+        <lightning-tabset>
+            
+            <lightning-tab label="Child 1">
+            <label>Child 1</label>
+            <c-child-a onchildaevent={handleChildEvent}></c-child-a>
+            </lightning-tab>
+
+            <lightning-tab label="Child 2">
+                <label>Child 2</label>
+                <c-child-b onchildbevent={handleChildEvent}></c-child-b>
+            </lightning-tab>
+        </lightning-tabset>
+        <br/> Message from child: {message}
+    </lightning-card>
+    
+</template>
